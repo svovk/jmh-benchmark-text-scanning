@@ -40,7 +40,7 @@ public class TextScanBenchmark {
 
     @Benchmark
     @OperationsPerInvocation(DATA_SET_SAMPLE_COUNT)
-    public void mesureScanner(Blackhole blackhole, BenchmarkState state) throws IOException {
+    public void measureScanner(Blackhole blackhole, BenchmarkState state) throws IOException {
         try (Scanner scanner = new Scanner(state.file)) {
             consume(scanner, blackhole, DATA_SET_SAMPLE_COUNT);
         }
@@ -48,7 +48,7 @@ public class TextScanBenchmark {
 
     @Benchmark
     @OperationsPerInvocation(DATA_SET_SAMPLE_COUNT)
-    public void mesureFileReaderScanner(Blackhole blackhole, BenchmarkState state) throws IOException {
+    public void measureFileReaderScanner(Blackhole blackhole, BenchmarkState state) throws IOException {
         try (Scanner scanner = new Scanner(new FileReader(state.file))) {
             consume(scanner, blackhole, DATA_SET_SAMPLE_COUNT);
         }
@@ -56,7 +56,7 @@ public class TextScanBenchmark {
 
     @Benchmark
     @OperationsPerInvocation(DATA_SET_SAMPLE_COUNT)
-    public void mesureBufferedFileReaderScanner(Blackhole blackhole, BenchmarkState state) throws IOException {
+    public void measureBufferedFileReaderScanner(Blackhole blackhole, BenchmarkState state) throws IOException {
         try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(state.file)))) {
             consume(scanner, blackhole, DATA_SET_SAMPLE_COUNT);
         }
@@ -64,7 +64,7 @@ public class TextScanBenchmark {
 
     @Benchmark
     @OperationsPerInvocation(DATA_SET_SAMPLE_COUNT)
-    public void mesureMyScanner(Blackhole blackhole, BenchmarkState state) throws IOException {
+    public void measureMyScanner(Blackhole blackhole, BenchmarkState state) throws IOException {
         try (MyScanner myScanner = new MyScanner(new FileReader(state.file))) {
             consume(myScanner, blackhole, DATA_SET_SAMPLE_COUNT);
         }
