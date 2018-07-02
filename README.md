@@ -6,3 +6,10 @@ A benchmark to compare different approaches for reading integers from a file:
 - `Scanner` constructed using `Scanner(Readable source)` constructor where `Readable` is `FileReader`
 - `Scanner` constructed using `Scanner(Readable source)` constructor where `Readable` is `FileReader` wrapped in `BufferedReader`
 - a bit reworked version of `MyScanner` class (original one is published on [codeforces](http://codeforces.com/blog/entry/7018))
+
+To build and then run the benchmark:
+
+```
+mvn clean install
+java -jar target/benchmarks.jar
+```
